@@ -1,4 +1,4 @@
-from mycroft import MycroftSkill, intent_hander
+from mycroft import MycroftSkill, intent_handler
 import redis
 import json
 
@@ -8,7 +8,7 @@ def SmartMirrorNavigationSkill(MycroftSkill):
         self.register_entity_file('location.entity')
         self.redis_client = redis.Redis(host="192.168.1.11", port=6379, db=0)
 
-        @intent_hander('navigate.to.intent')
+        @intent_handler('navigate.to.intent')
         def handle_navigation_command(self, message):
             destination = message.data.get('location')
 
