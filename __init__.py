@@ -8,18 +8,18 @@ def SmartMirrorNavigationSkill(MycroftSkill):
         self.register_entity_file('location.entity')
         self.redis_client = redis.Redis(host="192.168.1.11", port=6379, db=0)
 
-        @intent_handler('navigate.to.intent')
-        def handle_navigation_command(self, message):
-            destination = message.data.get('location')
+    @intent_handler('navigate.to.intent')
+    def handle_navigate_to(self, message):
+        destination = message.data.get('location')
 
-            if destination is not None:
-                publish_message = {
-                    'navigation': {
-                        'location': destination,    
-                    }
+        if destination is not None:
+            publish_message = {
+                'navigation': {
+                    'location': destination,    
                 }
+            }
 
-                self.redis_client.publish(json.dumps(publish_message, separators=(',', ':')))
+            self.redis_client.publish(json.dumps(publish_message, separators=(',', ':')))
     
 
 def create_skill():
