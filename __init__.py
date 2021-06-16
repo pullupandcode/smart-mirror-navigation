@@ -21,5 +21,6 @@ def SmartMirrorNavigationSkill(MycroftSkill):
 
                 self.redis_client.publish(json.dumps(publish_message, separators=(',', ':')))
     
-def create_skill(self):
+
+def create_skill():
     return MycroftSkill()
