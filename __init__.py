@@ -23,4 +23,4 @@ def SmartMirrorNavigationSkill(MycroftSkill):
     
 
 def create_skill():
-    return MycroftSkill()
+    return SmartMirrorNavigationSkill()
