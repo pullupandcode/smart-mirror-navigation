@@ -2,7 +2,7 @@ from mycroft import MycroftSkill, intent_handler
 import redis
 import json
 
-def SmartMirrorNavigationSkill(MycroftSkill):
+class SmartMirrorNavigationSkill(MycroftSkill):
     def __init__(self):
         super(MycroftSkill, self).__init__("SmartMirrorNavigationSkill")
         self.register_entity_file('location.entity')
