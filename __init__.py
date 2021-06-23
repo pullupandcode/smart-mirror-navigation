@@ -11,7 +11,8 @@ class SmartMirrorNavigationSkill(MycroftSkill):
     @intent_handler('navigate.to.intent')
     def handle_navigate_to(self, message):
         destination = message.data.get('location')
-
+        print(message)
+        
         if destination is not None:
             publish_message = {
                 'navigation': {
