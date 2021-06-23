@@ -22,7 +22,7 @@ class SmartMirrorNavigationSkill(MycroftSkill):
                 }
             }
 
-            self.redis_client.publish(json.dumps(publish_message, separators=(',', ':')))
+            self.redis_client.publish('navigation', json.dumps(publish_message, separators=(',', ':')))
     
 
 def create_skill():
