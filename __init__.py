@@ -5,6 +5,8 @@ import json
 class SmartMirrorNavigationSkill(MycroftSkill):
     def __init__(self):
         super(SmartMirrorNavigationSkill, self).__init__("SmartMirrorNavigationSkill")
+
+    def initialize(self):
         self.register_entity_file('location.entity')
         self.redis_client = redis.Redis(host="192.168.1.11", port=6379, db=0)
 
